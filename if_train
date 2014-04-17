@@ -1,4 +1,21 @@
-if(theta=
+if(theta=0 || theta=360)
+{
+next_buttons.push(39);
+}
 
+if(theta=90)
+{
+next_buttons.push(40);
+}
 
-yolo
+if(theta=180)
+{
+next_buttons.push(37);
+}
+
+if(theta=270)
+{
+next_buttons.push(38);
+}
+
+if(0<
