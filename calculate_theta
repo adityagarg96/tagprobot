@@ -1,0 +1,11 @@
+
+
+
+
+
+if(xdiff>0)
+{
+  if(ydiff>0)
+  {
+  theta=Math.atan(ydiff/xdiff)
+  }
