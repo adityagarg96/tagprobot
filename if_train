@@ -1,21 +1,79 @@
-if(theta=0 || theta=360)
+if(theta==0 || theta==360)
 {
 next_buttons.push(39);
 }
 
-if(theta=90)
+if(theta==90)
 {
 next_buttons.push(40);
 }
 
-if(theta=180)
+if(theta==180)
 {
 next_buttons.push(37);
 }
 
-if(theta=270)
+if(theta==270)
 {
 next_buttons.push(38);
 }
 
-if(0<
+if(0<theta<90){
+  if(theta==45){
+  next_buttons.push(39);
+  next_buttons.push(40);
+  }
+  if(theta>45){
+  next_buttons.push(40);
+  //press some right values
+  }
+  else{
+  next_buttons.push(39);
+  //press some up values
+  }
+}  
+
+if(90<theta<180){
+  if(theta==135){
+  next_buttons.push(37);
+  next_buttons.push(40);
+  }
+  if(theta>135){
+  next_buttons.push(40);
+  //press some left values
+  }
+  else{
+  next_buttons.push(37);
+  //press some up values
+  }
+}
+
+if(180<theta<270){
+  if(theta==225){
+  next_buttons.push(37);
+  next_buttons.push(38);
+  }
+  if(theta>225){
+  next_buttons.push(38);
+  //press some left values
+  }
+  else{
+  next_buttons.push(37);
+  //press some down values
+  }
+}
+
+if(270<theta<360){
+  if(theta==315){
+  next_buttons.push(39);
+  next_buttons.push(38);
+  }
+  if(theta>315){
+  next_buttons.push(39);
+  //press some down values
+  }
+  else{
+  next_buttons.push(38);
+  //press some right values
+  }
+}
