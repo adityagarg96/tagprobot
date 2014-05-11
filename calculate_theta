@@ -9,7 +9,7 @@ if(xdiff>=0) //either first or fourth quadrant
   theta=Math.atan(ydiff/xdiff);
   return (180/Math.PI)*theta;
   }
-  if(ydiff<0) //fourth quadrant
+  else //fourth quadrant
   {
   theta = (2*Math.PI)+Math.atan(ydiff/xdiff);
   return (180/Math.PI)*theta;
@@ -24,7 +24,7 @@ if(xdiff<0) //either second or third quadrant
   theta = Math.atan2(ydiff,xdiff);
   return (180/Math.PI)*theta;
   }
-  if(ydiff<=0) //third quadrant
+  else //third quadrant
   {
   theta = Math.PI+Math.atan(ydiff/xdiff);
   return (180/Math.PI)*theta
