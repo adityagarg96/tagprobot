@@ -1,0 +1,43 @@
+var target = null;
+var self = null;
+var players = [];
+
+function update_player_list()
+{
+//reset and update the list of players
+players = [];
+var curr = 0;
+  for(i = 0; i < 15; i++)
+  {
+    if(tagpro.players[i] != null)
+    {
+    players[curr++] = tagpro.players[i];
+    }
+  }
+}
+
+
+function ai_get_self()
+{
+  for(i = 0; i < players.length; i++)
+  {
+    if(players[i].name == "hotshot bot")
+    {
+    return players[i];
+    } 
+  }
+return null;
+}
+
+function ai_get_other()
+{
+  for(i = 0; i < players.length; i++)
+  {
+    if(players[i].flag == true)
+    {
+    return players[i];
+    }
+  }
+return null;
+}
+
