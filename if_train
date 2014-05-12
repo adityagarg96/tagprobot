@@ -1,79 +1,108 @@
 if(theta==0 || theta==360)
 {
-next_buttons.push(39);
+isRight(TRUE); 
+isLeft(FALSE); 
+isUp(FALSE); 
+isDown(FALSE);
 }
 
 if(theta==90)
 {
-next_buttons.push(40);
+isRight(FALSE); 
+isLeft(FALSE); 
+isUp(TRUE); 
+isDown(FALSE);
 }
 
 if(theta==180)
 {
-next_buttons.push(37);
+isRight(FALSE); 
+isLeft(TRUE); 
+isUp(FALSE); 
+isDown(FALSE);
 }
 
 if(theta==270)
 {
-next_buttons.push(38);
+isRight(FALSE); 
+isLeft(FALSE); 
+isUp(FALSE); 
+isDown(TRUE);
 }
 
 if(0<theta<90){
-  if(theta==45){
-  next_buttons.push(39);
-  next_buttons.push(40);
+isLeft(FALSE);
+isDown(FALSE);
+
+  if(theta==45)
+  {
+  isRight(TRUE); 
+  isUp(TRUE); 
+  
   }
   if(theta>45){
-  next_buttons.push(40);
-  //press some right values
+  isUp(TRUE);
+  rightVariable(theta); //press some right values
   }
   else{
-  next_buttons.push(39);
-  //press some up values
+  isRight(TRUE); 
+  upVariable(theta); //press some up values
   }
 }  
 
 if(90<theta<180){
+
+isDown(FALSE);
+isRight(FALSE);
+
   if(theta==135){
-  next_buttons.push(37);
-  next_buttons.push(40);
+  isLeft(TRUE); 
+  isUp(TRUE); 
   }
   if(theta>135){
-  next_buttons.push(40);
-  //press some left values
+  isLeft(TRUE); 
+  upVariable(theta); //press some up values
   }
   else{
-  next_buttons.push(37);
-  //press some up values
+  isUp(TRUE);
+  leftVariable(theta); //press some left values
   }
 }
 
 if(180<theta<270){
+
+isUp(FALSE);
+isRight(FALSE);
+
   if(theta==225){
-  next_buttons.push(37);
-  next_buttons.push(38);
+  isLeft(TRUE); 
+  isDown(TRUE); 
   }
   if(theta>225){
-  next_buttons.push(38);
-  //press some left values
+  isDown(TRUE); 
+  leftVariable(theta); //press some left values
   }
   else{
-  next_buttons.push(37);
-  //press some down values
+  isLeft(TRUE); 
+  downVariable(theta); //press some down values
   }
 }
 
 if(270<theta<360){
+
+isUp(FALSE);
+isLeft(FALSE);
+
   if(theta==315){
-  next_buttons.push(39);
-  next_buttons.push(38);
+  isRight(TRUE); 
+  isDown(TRUE); 
   }
   if(theta>315){
-  next_buttons.push(39);
-  //press some down values
+  isRight(TRUE); 
+  downVariable(theta); //press some down values
   }
   else{
-  next_buttons.push(38);
-  //press some right values
+  isDown(TRUE); 
+  rightVariable(theta); //press some right values
   }
 }
