@@ -1,1 +1,14 @@
- 
+function update
+{
+
+self = ai_get_self();
+target = ai_get_other();
+
+  if(self != null && target != null)
+  {
+  var xdiff = target.x - self.x;
+  var ydiff = target.y - self.y;
+  }
+  
+calculate_theta(xdiff,ydiff);  
+}  
