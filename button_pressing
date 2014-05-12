@@ -23,12 +23,22 @@ function press(direction)
 var e = jQuery.Event("keydown");
     e.keyCode = direction;
     jQuery("canvas").trigger(e);
+    
+    if(direction == 39){rightON=1;}
+    elseif(direction == 37){leftON=1;}
+    elseif(direction == 38){upON=1;}
+    elseif(direction == 40){downON=1;}
 }
 function release(direction)
 {
-var e = jQuery.Event("keydown");
+var e = jQuery.Event("keyup");
     e.keyCode = direction;
     jQuery("canvas").trigger(e);
+    
+    if(direction == 39){rightON=0;}
+    elseif(direction == 37){leftON=0;}
+    elseif(direction == 38){upON=0;}
+    elseif(direction == 40){downON=0;}
 }
 
 // _______________________________________________________________
@@ -42,7 +52,6 @@ function isRight(x)
     {
     press(RIGHT);
     }
-    rightON = 1;
   }
   
   if (x==0) // ball should stop moving right
@@ -51,7 +60,6 @@ function isRight(x)
     {
     release(RIGHT);
     }
-    rightON = 0;
   }
 }
 
@@ -64,7 +72,6 @@ function isLeft(x)
     {
     press(LEFT);
     }
-    leftON = 1;
   }
   
   if (x==0) // ball should stop moving left
@@ -73,7 +80,6 @@ function isLeft(x)
     {
     release(LEFT);
     }
-    leftON = 0;
   }
 }  
 
@@ -86,7 +92,6 @@ function isUp(x)
     {
     press(UP);
     }
-    upON = 1;
   }
   
   if (x==0) // ball should stop moving up
@@ -95,7 +100,6 @@ function isUp(x)
     {
     release(UP);
     }
-    upON = 0;
   }
 }  
 
@@ -108,7 +112,6 @@ function isDown(x)
     {
     press(DOWN);
     }
-    downON = 1;
   }
   
   if (x==0) // ball should stop moving down
@@ -117,7 +120,6 @@ function isDown(x)
     {
     release(DOWN);
     }
-    downON = 0;
   }
 }  
 
@@ -130,7 +132,6 @@ function rightVariable(theta)
     press(RIGHT);
     }
 setTimeout(release(RIGHT),2.25*theta);
-rightON=0;
 }
 
 function leftVariable(theta)
@@ -140,7 +141,6 @@ function leftVariable(theta)
     press(LEFT);
     }
 setTimeout(release(LEFT),2.25*theta);
-leftON=0;
 }
 
 function upVariable(theta)
@@ -150,7 +150,6 @@ function upVariable(theta)
     press(UP);
     }
 setTimeout(release(UP),2.25*theta);
-upON=0;
 }
 
 function downVariable(theta)
@@ -160,7 +159,6 @@ function downVariable(theta)
     press(DOWN);
     }
 setTimeout(release(DOWN),2.25*theta);
-downON=0;
 }
 
 
