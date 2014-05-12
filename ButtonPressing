@@ -1,0 +1,9 @@
+// Global Variables
+var TRUE = 1; 
+var FALSE = 0;
+var right;
+var left;
+var up;
+var down; 
+
+
