@@ -1,34 +1,57 @@
 //Global Variables
 var TRUE = 1; 
 var FALSE = 0;
-var right = 0;
-var left = 0;
-var up = 0;
-var down = 0; 
+
+//______________________________________________________________
+
+var RIGHT = 39;
+var LEFT = 37;
+var UP = 38;
+var DOWN = 40;
+
+//______________________________________________________________
+
+bool rightON = 0;
+bool leftON = 0;
+bool upON = 0;
+bool downON = 0; 
+
+//________________________________________________________________
+
+function press(direction)
+{
+var e = jQuery.Event("keydown");
+    e.keyCode = direction;
+    jQuery("canvas").trigger(e);
+}
+function release(direction)
+{
+var e = jQuery.Event("keydown");
+    e.keyCode = direction;
+    jQuery("canvas").trigger(e);
+}
+
+// _______________________________________________________________
 
 function isRight(x)
 {
   if (x==1) // ball should be moving right
   {
     
-    if(right==0) // ball isnt moving right
+    if(rightON==0) // ball isnt moving right
     {
-    var e = jQuery.Event("keydown");
-    e.keyCode = 39;
-    jQuery("canvas").trigger(e);
+    press(RIGHT);
     }
-    right = 1;
+    rightON = 1;
   }
   
   if (x==0) // ball should stop moving right
   {
-    if(right==1)//ball is moving right
+    if(rightON==1)//ball is moving right
     {
-    var e = jQuery.Event("keyup");
-    e.keyCode = 39;
-    jQuery("canvas").trigger(e);
+    release(RIGHT);
     }
-    right = 0;
+    rightON = 0;
   }
 }
 
@@ -37,24 +60,20 @@ function isLeft(x)
   if (x==1) // ball should be moving left
   {
     
-    if(left==0) // ball isnt moving left
+    if(leftON==0) // ball isnt moving left
     {
-    var e = jQuery.Event("keydown");
-    e.keyCode = 37;
-    jQuery("canvas").trigger(e);
+    press(LEFT);
     }
-    left = 1;
+    leftON = 1;
   }
   
   if (x==0) // ball should stop moving left
   {
-    if(left==1)//ball is moving left
+    if(leftON==1)//ball is moving left
     {
-    var e = jQuery.Event("keyup");
-    e.keyCode = 37;
-    jQuery("canvas").trigger(e);
+    release(LEFT);
     }
-    left = 0;
+    leftON = 0;
   }
 }  
 
@@ -63,24 +82,20 @@ function isUp(x)
   if (x==1) // ball should be moving up
   {
     
-    if(up==0) // ball isnt moving up
+    if(upON==0) // ball isnt moving up
     {
-    var e = jQuery.Event("keydown");
-    e.keyCode = 338;
-    jQuery("canvas").trigger(e);
+    press(UP);
     }
-    up = 1;
+    upON = 1;
   }
   
   if (x==0) // ball should stop moving up
   {
-    if(up==1)//ball is moving up
+    if(upON==1)//ball is moving up
     {
-    var e = jQuery.Event("keyup");
-    e.keyCode = 38;
-    jQuery("canvas").trigger(e);
+    release(UP);
     }
-    up = 0;
+    upON = 0;
   }
 }  
 
@@ -89,34 +104,47 @@ function isDown(x)
   if (x==1) // ball should be moving down
   {
     
-    if(down==0) // ball isnt moving down
+    if(downON==0) // ball isnt moving down
     {
-    var e = jQuery.Event("keydown");
-    e.keyCode = 40;
-    jQuery("canvas").trigger(e);
+    press(DOWN);
     }
-    down = 1;
+    downON = 1;
   }
   
   if (x==0) // ball should stop moving down
   {
-    if(down==1)//ball is moving down
+    if(downON==1)//ball is moving down
     {
-    var e = jQuery.Event("keyup");
-    e.keyCode = 40;
-    jQuery("canvas").trigger(e);
+    release(DOWN);
     }
-    down = 0;
+    downON = 0;
   }
 }  
 
+// ___________________________________________________________________________________________
+
 function rightVariable(theta)
 {
-var e = jQuery.Event("keydown");
-    e.keyCode = 39;
-    jQuery("canvas").trigger(e);
+press(RIGHT);
+setTimeout(release(RIGHT),2.25*theta);
+}
 
-    
+function leftVariable(theta)
+{
+press(LEFT);
+setTimeout(release(LEFT),2.25*theta);
+}
+
+function upVariable(theta)
+{
+press(UP);
+setTimeout(release(UP),2.25*theta);
+}
+
+function downVariable(theta)
+{
+press(DOWN);
+setTimeout(release(DOWN),2.25*theta);
 }
 
 
