@@ -12,10 +12,10 @@ var DOWN = 40;
 
 //______________________________________________________________
 
-bool rightON = 0;
-bool leftON = 0;
-bool upON = 0;
-bool downON = 0; 
+var rightON = 0;
+var leftON = 0;
+var upON = 0;
+var downON = 0; 
 
 //________________________________________________________________
 
