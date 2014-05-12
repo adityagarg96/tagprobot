@@ -10,5 +10,8 @@ target = ai_get_other();
   var ydiff = target.y - self.y;
   }
   
-calculate_theta(xdiff,ydiff);  
+calculate_theta(xdiff,ydiff); 
+
+//if train
+
 }  
