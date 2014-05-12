@@ -1,6 +1,7 @@
 //Global Variables
 var TRUE = 1; 
 var FALSE = 0;
+var theta;
 
 //______________________________________________________________
 
@@ -268,7 +269,7 @@ target = ai_get_other();
   var ydiff = target.y - self.y;
   }
   
-calculate_theta(xdiff,ydiff); 
+theta=calculate_theta(xdiff,ydiff); 
 
 if(theta==0 || theta==360)
 {
