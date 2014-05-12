@@ -127,24 +127,28 @@ function rightVariable(theta)
 {
 press(RIGHT);
 setTimeout(release(RIGHT),2.25*theta);
+rightON=0;
 }
 
 function leftVariable(theta)
 {
 press(LEFT);
 setTimeout(release(LEFT),2.25*theta);
+leftON=0;
 }
 
 function upVariable(theta)
 {
 press(UP);
 setTimeout(release(UP),2.25*theta);
+upON=0;
 }
 
 function downVariable(theta)
 {
 press(DOWN);
 setTimeout(release(DOWN),2.25*theta);
+downON=0;
 }
 
 
