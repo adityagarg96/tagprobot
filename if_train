@@ -42,6 +42,7 @@ isDown(FALSE);
   }
   if(theta>45){
   isUp(TRUE);
+  theta = 90-theta;
   rightVariable(theta); //press some right values
   }
   else{
@@ -61,10 +62,12 @@ isRight(FALSE);
   }
   if(theta>135){
   isLeft(TRUE); 
+  theta=180-theta;
   upVariable(theta); //press some up values
   }
   else{
   isUp(TRUE);
+  theta=theta-90;
   leftVariable(theta); //press some left values
   }
 }
@@ -80,10 +83,12 @@ isRight(FALSE);
   }
   if(theta>225){
   isDown(TRUE); 
+  theta=270-theta;
   leftVariable(theta); //press some left values
   }
   else{
   isLeft(TRUE); 
+  theta=theta=180
   downVariable(theta); //press some down values
   }
 }
@@ -99,10 +104,12 @@ isLeft(FALSE);
   }
   if(theta>315){
   isRight(TRUE); 
+  theta=360-theta;
   downVariable(theta); //press some down values
   }
   else{
   isDown(TRUE); 
+  theta=theta-270;
   rightVariable(theta); //press some right values
   }
 }
