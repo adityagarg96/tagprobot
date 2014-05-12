@@ -1,9 +1,116 @@
 // Global Variables
 var TRUE = 1; 
 var FALSE = 0;
-var right;
-var left;
-var up;
-var down; 
+var right = 0;
+var left = 0;
+var up = 0;
+var down = 0; 
+
+function isRight(x)
+{
+  if (x==1) // ball should be moving right
+  {
+    
+    if(right==0) // ball isnt moving right
+    {
+    var e = jQuery.Event("keydown");
+    e.keyCode = 39;
+    jQuery("canvas").trigger(e);
+    }
+    right = 1;
+  }
+  
+  if (x==0) // ball should stop moving right
+  {
+    if(right==1)//ball is moving right
+    {
+    var e = jQuery.Event("keyup");
+    e.keyCode = 39;
+    jQuery("canvas").trigger(e);
+    }
+    right = 0;
+  }
+}
+
+function isLeft(x)
+{
+  if (x==1) // ball should be moving left
+  {
+    
+    if(left==0) // ball isnt moving left
+    {
+    var e = jQuery.Event("keydown");
+    e.keyCode = 37;
+    jQuery("canvas").trigger(e);
+    }
+    left = 1;
+  }
+  
+  if (x==0) // ball should stop moving left
+  {
+    if(left==1)//ball is moving left
+    {
+    var e = jQuery.Event("keyup");
+    e.keyCode = 37;
+    jQuery("canvas").trigger(e);
+    }
+    left = 0;
+  }
+}  
+
+function isUp(x)
+{
+  if (x==1) // ball should be moving up
+  {
+    
+    if(up==0) // ball isnt moving up
+    {
+    var e = jQuery.Event("keydown");
+    e.keyCode = 338;
+    jQuery("canvas").trigger(e);
+    }
+    up = 1;
+  }
+  
+  if (x==0) // ball should stop moving up
+  {
+    if(up==1)//ball is moving up
+    {
+    var e = jQuery.Event("keyup");
+    e.keyCode = 38;
+    jQuery("canvas").trigger(e);
+    }
+    up = 0;
+  }
+}  
+
+function isDown(x)
+{
+  if (x==1) // ball should be moving down
+  {
+    
+    if(down==0) // ball isnt moving down
+    {
+    var e = jQuery.Event("keydown");
+    e.keyCode = 40;
+    jQuery("canvas").trigger(e);
+    }
+    down = 1;
+  }
+  
+  if (x==0) // ball should stop moving down
+  {
+    if(down==1)//ball is moving down
+    {
+    var e = jQuery.Event("keyup");
+    e.keyCode = 40;
+    jQuery("canvas").trigger(e);
+    }
+    down = 0;
+  }
+}  
+
+
+
 
 
