@@ -75,7 +75,8 @@ var theta;
   }
 }
 
-function update{
+function update
+{
 
 self = ai_get_self();
 target = ai_get_other();
