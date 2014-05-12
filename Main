@@ -29,7 +29,7 @@ var e = jQuery.Event("keydown");
 }
 function release(direction)
 {
-var e = jQuery.Event("keydown");
+var e = jQuery.Event("keyup");
     e.keyCode = direction;
     jQuery("canvas").trigger(e);
 }
