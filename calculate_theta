@@ -1,33 +1,93 @@
-function calculate_theta(xdiff,ydiff){
+var target = null;
+var self = null;
+var players = [];
 
-var theta;
-
-if(xdiff>=0) //either first or fourth quadrant
+function update_player_list()
 {
-  if(ydiff>0)//first quadrant
+//reset and update the list of players
+players = [];
+var curr = 0;
+  for(i = 0; i < 15; i++)
   {
-  theta=Math.atan(ydiff/xdiff);
-  return (180/Math.PI)*theta;
-  }
-  else //fourth quadrant
-  {
-  theta = (2*Math.PI)+Math.atan(ydiff/xdiff);
-  return (180/Math.PI)*theta;
+    if(tagpro.players[i] != null)
+    {
+    players[curr++] = tagpro.players[i];
+    }
   }
 }
 
-if(xdiff<0) //either second or third quadrant
+
+function ai_get_self()
 {
+  for(i = 0; i < players.length; i++)
+  {
+    if(players[i].name == "hotshot bot")
+    {
+    return players[i];
+    } 
+  }
+return null;
+}
+
+function ai_get_other()
+{
+  for(i = 0; i < players.length; i++)
+  {
+    if(players[i].flag == true)
+    {
+    return players[i];
+    }
+  }
+return null;
+}
+
+function calculate_theta(xdiff,ydiff)
+{
+
+var theta;
+
+  if(xdiff>=0) //either first or fourth quadrant
+  {
+    if(ydiff>0)//first quadrant
+    {
+   theta=Math.atan(ydiff/xdiff);
+    return (180/Math.PI)*theta;
+    }
+    else //fourth quadrant
+    {
+    theta = (2*Math.PI)+Math.atan(ydiff/xdiff);
+    return (180/Math.PI)*theta;
+    }
+  }
+
+  if(xdiff<0) //either second or third quadrant
+  {
+    if(ydiff>=0)//second quadrant
+    {
+    theta = Math.atan2(ydiff,xdiff);
+    return (180/Math.PI)*theta;
+    }
+    else //third quadrant
+    {
+    theta = Math.PI+Math.atan(ydiff/xdiff);
+    return (180/Math.PI)*theta
+    }
+  }
+}
+
+function update{
+
+self = ai_get_self();
+target = ai_get_other();
+
+  if(self != null && target != null)
+  {
+  var xdiff = target.x - self.x;
+  var ydiff = target.y - self.y;
+  }
   
-  if(ydiff>=0)//second quadrant
-  {
-  theta = Math.atan2(ydiff,xdiff);
-  return (180/Math.PI)*theta;
-  }
-  else //third quadrant
-  {
-  theta = Math.PI+Math.atan(ydiff/xdiff);
-  return (180/Math.PI)*theta
-  }
+calculate_theta(xdiff,ydiff);  
+}  
+
   
 
