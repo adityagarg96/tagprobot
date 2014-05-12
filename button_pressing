@@ -110,6 +110,14 @@ function isDown(x)
   }
 }  
 
+function rightVariable(theta)
+{
+var e = jQuery.Event("keydown");
+    e.keyCode = 39;
+    jQuery("canvas").trigger(e);
+
+    
+}
 
 
 
