@@ -1,0 +1,169 @@
+//Global Variables
+var TRUE = 1; 
+var FALSE = 0;
+
+//______________________________________________________________
+
+var RIGHT = 39;
+var LEFT = 37;
+var UP = 38;
+var DOWN = 40;
+
+//______________________________________________________________
+
+var rightON = 0;
+var leftON = 0;
+var upON = 0;
+var downON = 0; 
+
+//________________________________________________________________
+
+function press(direction)
+{
+var e = jQuery.Event("keydown");
+    e.keyCode = direction;
+    jQuery("canvas").trigger(e);
+    
+    if(direction == 39){rightON=1;}
+    if(direction == 37){leftON=1;}
+    if(direction == 38){upON=1;}
+    if(direction == 40){downON=1;}
+}
+function release(direction)
+{
+var e = jQuery.Event("keyup");
+    e.keyCode = direction;
+    jQuery("canvas").trigger(e);
+    
+    if(direction == 39){rightON=0;}
+    if(direction == 37){leftON=0;}
+    if(direction == 38){upON=0;}
+    if(direction == 40){downON=0;}
+}
+
+// _______________________________________________________________
+
+function isRight(x)
+{
+  if (x==1) // ball should be moving right
+  {
+    
+    if(rightON==0) // ball isnt moving right
+    {
+    press(RIGHT);
+    }
+  }
+  
+  if (x==0) // ball should stop moving right
+  {
+    if(rightON==1)//ball is moving right
+    {
+    release(RIGHT);
+    }
+  }
+}
+
+function isLeft(x)
+{
+  if (x==1) // ball should be moving left
+  {
+    
+    if(leftON==0) // ball isnt moving left
+    {
+    press(LEFT);
+    }
+  }
+  
+  if (x==0) // ball should stop moving left
+  {
+    if(leftON==1)//ball is moving left
+    {
+    release(LEFT);
+    }
+  }
+}  
+
+function isUp(x)
+{
+  if (x==1) // ball should be moving up
+  {
+    
+    if(upON==0) // ball isnt moving up
+    {
+    press(UP);
+    }
+  }
+  
+  if (x==0) // ball should stop moving up
+  {
+    if(upON==1)//ball is moving up
+    {
+    release(UP);
+    }
+  }
+}  
+
+function isDown(x)
+{
+  if (x==1) // ball should be moving down
+  {
+    
+    if(downON==0) // ball isnt moving down
+    {
+    press(DOWN);
+    }
+  }
+  
+  if (x==0) // ball should stop moving down
+  {
+    if(downON==1)//ball is moving down
+    {
+    release(DOWN);
+    }
+  }
+}  
+
+// ___________________________________________________________________________________________
+
+function rightVariable(theta)
+{
+    if(rightON !=1)
+    {
+    press(RIGHT);
+    }
+setTimeout(release(RIGHT),2.25*theta);
+}
+
+function leftVariable(theta)
+{
+    if(leftON !=1)
+    {
+    press(LEFT);
+    }
+setTimeout(release(LEFT),2.25*theta);
+}
+
+function upVariable(theta)
+{
+    if(upON !=1)
+    {
+    press(UP);
+    }
+setTimeout(release(UP),2.25*theta);
+}
+
+function downVariable(theta)
+{
+    if(downON !=1)
+    {
+    press(DOWN);
+    }
+setTimeout(release(DOWN),2.25*theta);
+}
+
+
+
+press(RIGHT);
+setTimeout(release(RIGHT),1000);
+
+
