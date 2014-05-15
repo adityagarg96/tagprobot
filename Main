@@ -26,13 +26,28 @@ function press(direction)
 var e = jQuery.Event("keydown");
     e.keyCode = direction;
     jQuery("canvas").trigger(e);
+    
+     if(direction == 39){rightON=1;}
+    if(direction == 37){leftON=1;}
+    if(direction == 38){upON=1;}
+    if(direction == 40){downON=1;}
+    
+    
 }
 function release(direction)
 {
 var e = jQuery.Event("keyup");
     e.keyCode = direction;
     jQuery("canvas").trigger(e);
+    
+    
+     if(direction == 39){rightON=1;}
+    if(direction == 37){leftON=1;}
+    if(direction == 38){upON=1;}
+    if(direction == 40){downON=1;}
+    
 }
+
 
 // _______________________________________________________________
 
@@ -257,7 +272,7 @@ return null;
 
 
 
-function update
+function update()
 {
 
 self = ai_get_self();
@@ -392,7 +407,7 @@ isLeft(FALSE);
 
 }
 
-function loop
+function loop()
 {
 
 update();
