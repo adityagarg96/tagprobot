@@ -25,9 +25,9 @@ var e = jQuery.Event("keydown");
     jQuery("canvas").trigger(e);
     
     if(direction == 39){rightON=1;}
-    elseif(direction == 37){leftON=1;}
-    elseif(direction == 38){upON=1;}
-    elseif(direction == 40){downON=1;}
+    if(direction == 37){leftON=1;}
+    if(direction == 38){upON=1;}
+    if(direction == 40){downON=1;}
 }
 function release(direction)
 {
@@ -36,9 +36,9 @@ var e = jQuery.Event("keyup");
     jQuery("canvas").trigger(e);
     
     if(direction == 39){rightON=0;}
-    elseif(direction == 37){leftON=0;}
-    elseif(direction == 38){upON=0;}
-    elseif(direction == 40){downON=0;}
+    if(direction == 37){leftON=0;}
+    if(direction == 38){upON=0;}
+    if(direction == 40){downON=0;}
 }
 
 // _______________________________________________________________
