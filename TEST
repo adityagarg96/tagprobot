@@ -1,3 +1,12 @@
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
 //Global Variables
 var TRUE = 1; 
 var FALSE = 0;
@@ -164,6 +173,8 @@ setTimeout(release(DOWN),2.25*theta);
 
 
 press(RIGHT);
-setTimeout(release(RIGHT),1000);
+sleep(1000);
+release(RIGHT);
+
 
 
