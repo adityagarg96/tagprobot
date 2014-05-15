@@ -257,7 +257,7 @@ function ai_get_other()
 {
   for(i = 0; i < players.length; i++)
   {
-    if(players[i].flag == true)
+    if(players[i].flag == 3)
     {
     return players[i];
     }
