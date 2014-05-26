@@ -172,9 +172,4 @@ setTimeout(release(DOWN),2.25*theta);
 
 
 
-press(RIGHT);
-sleep(1000);
-release(RIGHT);
-
-
 
