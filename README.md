@@ -1,4 +1,4 @@
 tagprobot
 =========
 
-Plan is to mimic the actions of a player playing tagpro
+Simulates the actions of a player playing tagpro
