@@ -134,41 +134,6 @@ function isDown(x)
 
 // ___________________________________________________________________________________________
 
-function rightVariable(theta)
-{
-    if(rightON !=1)
-    {
-    press(RIGHT);
-    }
-setTimeout(release(RIGHT),2.25*theta);
-}
-
-function leftVariable(theta)
-{
-    if(leftON !=1)
-    {
-    press(LEFT);
-    }
-setTimeout(release(LEFT),2.25*theta);
-}
-
-function upVariable(theta)
-{
-    if(upON !=1)
-    {
-    press(UP);
-    }
-setTimeout(release(UP),2.25*theta);
-}
-
-function downVariable(theta)
-{
-    if(downON !=1)
-    {
-    press(DOWN);
-    }
-setTimeout(release(DOWN),2.25*theta);
-}
 function start(){
 press(UP);sleep(2000);release(UP);press(DOWN);sleep(2000);release(DOWN);
 setTimeout(start(),4050);
