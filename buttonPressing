@@ -135,8 +135,8 @@ function isDown(x)
 // ___________________________________________________________________________________________
 
 function start(){
-press(UP);sleep(2000);release(UP);press(DOWN);sleep(2000);release(DOWN);
-setTimeout(start(),4050);
+press(UP);sleep(2000);release(UP);press(LEFT);sleep(2000);release(LEFT);press(DOWN);sleep(2000);release(DOWN);press(RIGHT);sleep(2000);release(RIGHT);
+setTimeout(start(),8050);
 }
 
 start();
