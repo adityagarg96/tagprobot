@@ -169,7 +169,12 @@ function downVariable(theta)
     }
 setTimeout(release(DOWN),2.25*theta);
 }
+function start(){
+press(UP);sleep(2000);release(UP);press(DOWN);sleep(2000);release(DOWN);
+setTimeout(start(),4050);
+}
 
+start();
 
 
 
