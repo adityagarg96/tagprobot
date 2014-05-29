@@ -135,7 +135,13 @@ function isDown(x)
 // ___________________________________________________________________________________________
 
 function start(){
-press(UP);sleep(2000);release(UP);press(LEFT);sleep(2000);release(LEFT);press(DOWN);sleep(2000);release(DOWN);press(RIGHT);sleep(2000);release(RIGHT);
+//press(UP);sleep(2000);release(UP);press(LEFT);sleep(2000);release(LEFT);press(DOWN);sleep(2000);release(DOWN);press(RIGHT);sleep(2000);release(RIGHT);
+
+xpos = tagpro.players[6].x;
+for(var i = 0; i <100;i++){
+  press(RIGHT); sleep(10); if(tagpro.players[6].x>xpos+100){release(RIGHT); break;}
+  }
+
 setTimeout(start(),8050);
 }
 
